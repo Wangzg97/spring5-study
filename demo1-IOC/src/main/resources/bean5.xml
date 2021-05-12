@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="stu" class="collection.Student">
+        <!-- 数组类型注入 -->
+        <property name="courses">
+            <!-- 也可使用list标签 -->
+            <array>
+                <value>数学</value>
+                <value>语文</value>
+            </array>
+        </property>
+        <!-- List类型注入 -->
+        <property name="list">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+            </list>
+        </property>
+        <!-- Map类型注入 -->
+        <property name="maps">
+            <map>
+                <entry key="key1" value="value1"></entry>
+                <entry key="key2" value="value3"></entry>
+            </map>
+        </property>
+        <!-- Set类型注入 -->
+        <property name="set">
+            <set>
+                <value>set1</value>
+                <value>set2</value>
+            </set>
+        </property>
+
+        <!-- List携带对象注入 -->
+        <property name="courseList">
+            <list>
+                <ref bean="c1"></ref>
+                <ref bean="c2"></ref>
+            </list>
+        </property>
+    </bean>
+    <!-- 创建多个Course对象 -->
+    <bean id="c1" class="collection.Course">
+        <property name="cname" value="c111"></property>
+    </bean>
+    <bean id="c2" class="collection.Course">
+        <property name="cname" value="c222"></property>
+    </bean>
+
+</beans>

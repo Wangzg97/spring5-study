@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置User对象创建 -->
+    <bean id="user" class="pojo.User"></bean>
+
+    <!-- 使用set方法注入属性 -->
+    <bean id="book" class="pojo.Book">
+        <!-- 使用property完成属性注入 -->
+        <property name="name" value="西游记"></property>
+        <property name="author" value="罗贯中"></property>
+    </bean>
+
+    <!-- 使用有参构造注入属性 -->
+    <bean id="order" class="pojo.Order">
+        <!-- name为参数名；value为参数值；index为参数下表序号，从0开始 -->
+        <constructor-arg name="name" value="一号订单"></constructor-arg>
+        <constructor-arg name="address" value="某某街道20号"></constructor-arg>
+    </bean>
+</beans>
