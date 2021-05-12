@@ -1,0 +1,3 @@
+# Project exclude paths
+/demo1-IOC/target/
+/demo2-AOP/target/
