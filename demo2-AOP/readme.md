@@ -264,4 +264,15 @@ public class UserProxy {
    
    </beans>
    ```
+
+### 完全注解开发
+在注解方式实现AOP中可以创建配置类，这样就不需要使用xml配置文件
+```java
+@Configuration
+@ComponentScan(basePackages = {"aop_annotation"})
+@EnableAspectJAutoProxy(proxyTargetClass = true)
+public class ConfigAop {
+    
+}
+```
    
